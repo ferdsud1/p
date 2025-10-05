@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personal Trainer — Página Institucional</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cor-primaria: #1E3A8A; /* azul escuro */
+      --cor-secundaria: #F97316; /* laranja */
+      --bg: #ffffff;
+      --text: #222;
+      --muted:#666;
+      --radius: 12px;
+      --container: 1100px;
+      font-family: 'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);line-height:1.5}
+    .wrap{max-width:var(--container);margin:0 auto;padding:24px}
+
+    /* Header / Nav */
+    header{background:linear-gradient(90deg, rgba(30,58,138,0.98), rgba(30,58,138,0.9));color:#fff;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:10px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav{margin-left:auto}
+    ul.nav{display:flex;gap:18px;list-style:none;padding:0;margin:0}
+    ul.nav a{color:#fff;text-decoration:none;font-weight:600}
+    .cta{background:var(--cor-secundaria);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Hero */
+    .hero{display:flex;align-items:center;gap:32px;padding:48px 0}
+    .hero-left{flex:1}
+    .hero h1{font-size:36px;margin:0 0 10px}
+    .hero p.lead{color:#f1f5f9;margin:0 0 18px}
+    .hero .actions{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:10px;text-decoration:none;display:inline-block}
+    .btn-primary{background:var(--cor-secundaria);color:#fff;font-weight:700}
+    .btn-outline{border:2px solid rgba(255,255,255,0.2);color:#fff}
+
+    .hero-right{flex:1;text-align:center}
+    .banner-img{width:260px;height:260px;border-radius:16px;object-fit:cover;box-shadow:0 8px 30px rgba(0,0,0,0.2)}
+
+    /* Sections */
+    section{padding:48px 0;border-bottom:1px solid #eee}
+    h2{color:var(--cor-primaria);margin:0 0 12px;font-size:26px}
+    p.lead-dark{color:var(--muted);margin:0 0 18px}
+
+    /* Services */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .card h3{margin-top:0;color:var(--cor-primaria)}
+
+    /* Testimonials */
+    .testis{display:flex;gap:14px;overflow:auto;padding-bottom:6px}
+    .testi{min-width:260px;background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:18px}
+    form input,form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px;font-family:inherit}
+    form button{background:var(--cor-primaria);color:#fff;padding:12px 16px;border-radius:10px;border:0;font-weight:700}
+
+    /* Footer */
+    footer{padding:18px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    .social a{margin-right:10px;text-decoration:none;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .hero{flex-direction:column;gap:20px;text-align:center}
+      nav{display:none}
+    }
+    @media (max-width:768px){
+      .grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .hero h1{font-size:28px}
+      .hero .banner-img{width:220px;height:220px}
+    }
+    @media (max-width:425px){
+      .wrap{padding:12px}
+      .hero h1{font-size:22px}
+      .logo{width:48px;height:48px}
+      .cta{padding:8px 10px}
+    }
+
+    /* Small accessibility tweaks */
+    a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(249,115,22,0.22);outline-offset:3px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex;align-items:center">
+      <div class="brand">
+        <div class="logo">PT</div>
+        <div>
+          <div style="font-weight:700">Seu Nome — Personal Trainer</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.85)">Força • Saúde • Resultado</div>
+        </div>
+      </div>
+
+      <nav aria-label="Menu principal">
+        <ul class="nav">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#contato" class="cta">Agende uma sessão</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="inicio" class="hero" aria-labelledby="titulo-hero">
+      <div class="hero-left">
+        <h1 id="titulo-hero">Transforme seu corpo. Mantenha-se saudável.</h1>
+        <p class="lead">Programas personalizados de treino presencial e online para todos os níveis. Plano de treino, acompanhamento e suporte.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contato">Quero agendar</a>
+          <a class="btn btn-outline" href="#servicos">Ver serviços</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img class="banner-img" src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=800&auto=format&fit=crop&ixlib=rb-1.2.1&s=placeholder" alt="Personal Trainer em ação">
+      </div>
+    </section>
+
+    <section id="sobre" aria-labelledby="sobre-titulo">
+      <h2 id="sobre-titulo">Sobre</h2>
+      <p class="lead-dark">Foto, história e abordagem profissional. Explique brevemente formação, certificações, especialidades (peso, emagrecimento, reabilitação, performance) e filosofia de trabalho.</p>
+      <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+        <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001d4?q=80&w=600&auto=format&fit=crop&ixlib=rb-1.2.1&s=placeholder" alt="Foto do personal" style="width:160px;height:160px;border-radius:12px;object-fit:cover">
+        <div style="flex:1;min-width:220px">
+          <p><strong>Seu Nome</strong> — Personal Trainer com X anos de experiência. Especialista em treinos para emagrecimento e hipertrofia. Atendimento presencial e online. Atende em academia parceira e domiciliar.</p>
+          <ul>
+            <li>Formação: Educação Física (CREF: XX)</li>
+            <li>Certificações: Curso de Prescrição e Treinamento, Nutrição Esportiva (opcional)</li>
+            <li>Metodologia: Avaliação inicial, metas SMART, acompanhamento semanal</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" aria-labelledby="servicos-titulo">
+      <h2 id="servicos-titulo">Serviços</h2>
+      <p class="lead-dark">Planos flexíveis para atender suas necessidades.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Plano Básico</h3>
+          <p>Treinos semanais, acompanhamento por app e ajustes mensais. Ideal para iniciantes.</p>
+          <p><strong>R$ 120 / mês</strong></p>
+        </article>
+        <article class="card">
+          <h3>Plano Personal</h3>
+          <p>Sessões presenciais 2x por semana + plano alimentar básico e suporte via mensagem.</p>
+          <p><strong>R$ 380 / mês</strong></p>
+        </article>
+        <article class="card">
+          <h3>Online Premium</h3>
+          <p>Treino e acompanhamento diário, videochamadas mensais e ajustes semanais.</p>
+          <p><strong>R$ 240 / mês</strong></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="depoimentos" aria-labelledby="depoimentos-titulo">
+      <h2 id="depoimentos-titulo">Depoimentos</h2>
+      <p class="lead-dark">O que clientes reais dizem.</p>
+      <div class="testis" aria-live="polite">
+        <div class="testi">
+          <p>"Melhorei minha resistência e perdi 8kg em 3 meses. O treino é desafiador e o suporte é ótimo."</p>
+          <p style="font-weight:700;margin-top:8px">— Cliente A</p>
+        </div>
+        <div class="testi">
+          <p>"Treinos personalizados e atenção aos detalhes. Recomendo para quem quer resultado."</p>
+          <p style="font-weight:700;margin-top:8px">— Cliente B</p>
+        </div>
+        <div class="testi">
+          <p>"Profissional, pontual e com ótimo acompanhamento. Já vejo diferença nas minhas medidas."</p>
+          <p style="font-weight:700;margin-top:8px">— Cliente C</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="midia" aria-labelledby="midia-titulo">
+      <h2 id="midia-titulo">Demonstração de treino</h2>
+      <p class="lead-dark">Vídeo com exemplo de uma sessão (opcional).</p>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width:100%;border-radius:12px"></iframe>
+      </div>
+    </section>
+
+    <section id="contato" aria-labelledby="contato-titulo">
+      <h2 id="contato-titulo">Contato</h2>
+      <p class="lead-dark">Preencha o formulário ou veja nossa localização.</p>
+
+      <div class="contact-grid">
+        <form id="formContato" onsubmit="return handleSubmit(event)" aria-label="Formulário de contato">
+          <input aria-label="Nome" type="text" id="nome" placeholder="Seu nome" required>
+          <input aria-label="Telefone" type="tel" id="telefone" placeholder="(xx) xxxxx-xxxx" required>
+          <input aria-label="Email" type="email" id="email" placeholder="seu@email.com" required>
+          <textarea aria-label="Mensagem" id="mensagem" rows="5" placeholder="Como posso ajudar?" required></textarea>
+          <button type="submit">Enviar mensagem</button>
+          <p id="formMsg" style="margin-top:8px;color:var(--muted)"></p>
+        </form>
+
+        <div>
+          <h3 style="margin-top:0">Onde me encontrar</h3>
+          <p style="margin:0 0 8px">Endereço da academia parceira ou bairro — abrir no Google Maps</p>
+          <!-- Exemplo de embed do Google Maps (troque o src pelo iframe gerado pelo Google Maps para sua localização) -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.5!2d-46.6333084!3d-23.5505199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59b3f1c7c9b1%3A0x9b1d0b4d6f6e3b8a!2sPra%C3%A7a%20da%20S%C3%A9!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="100%" height="270" style="border:0;border-radius:10px" allowfullscreen="" loading="lazy"></iframe>
+
+          <div style="margin-top:12px;font-size:14px">
+            <p style="margin:4px 0"><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
+            <p style="margin:4px 0"><strong>Email:</strong> contato@seunome.com</p>
+            <div class="social" style="margin-top:6px">
+              <a href="#" aria-label="Instagram">Instagram</a> •
+              <a href="#" aria-label="Facebook">Facebook</a> •
+              <a href="#" aria-label="YouTube">YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <div>© <span id="ano"></span> Seu Nome — Personal Trainer</div>
+    <div style="text-align:right;color:var(--muted)">Feito com ♥ • <a href="#sobre">Saiba mais</a></div>
+  </footer>
+
+  <script>
+    // insert current year
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // Smooth scrolling for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
+
+    // Simple form handling (simulated)
+    function handleSubmit(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensagem = document.getElementById('mensagem').value.trim();
+      const msgEl = document.getElementById('formMsg');
+
+      if(!nome || !telefone || !email || !mensagem){
+        msgEl.textContent = 'Por favor, preencha todos os campos.';
+        return false;
+      }
+
+      // Simula envio (aqui você integraria com um backend ou serviço de email)
+      msgEl.textContent = 'Enviando...';
+      setTimeout(()=>{
+        msgEl.textContent = 'Mensagem enviada! Entrarei em contato em breve.';
+        e.target.reset();
+      },900);
+
+      return false;
+    }
+  </script>
+</body>
+</html>
